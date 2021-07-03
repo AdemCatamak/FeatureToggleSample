@@ -1,0 +1,46 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+
+    <table>
+        <tr>
+            <td style="text-align: right;">
+                <b>External System Integration :&nbsp; &nbsp;</b>
+            </td>
+            <td style="text-align: left">@Model.ExternalSystemIntegrationStatus</td>
+        </tr>
+
+        <tr>
+            <td style="text-align: right">
+                <b>Now :&nbsp; &nbsp;</b>
+            </td>
+            <td style="text-align: left">@Model.Now.ToString("T")</td>
+        </tr>
+        
+        @if (Model.IsPreviewActive)
+        {
+            <tr>
+                <td style="text-align: right">
+                    <b>Preview :&nbsp; &nbsp;</b>
+                </td>
+                <td style="text-align: left">
+
+                    <button>Preview</button>
+                </td>
+            </tr>
+        }
+
+
+        <tr>
+            <td></td>
+            <td style="text-align: left">
+                <a href="/index">Refresh</a>
+            </td>
+        </tr>
+    </table>
+
+</div>
